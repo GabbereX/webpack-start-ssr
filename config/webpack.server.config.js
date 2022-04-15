@@ -3,6 +3,7 @@ const nodeExternals = require('webpack-node-externals');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
+const GLOBAL_CSS_REGEXP = /\.global\.scss/;
 
 module.exports = {
   target: 'node',
@@ -27,6 +28,7 @@ module.exports = {
       {
         test: /.[tj]sx?$/,
         use: ['ts-loader'],
+        exclude: /node_modules/,
       },
 
       {
@@ -45,7 +47,12 @@ module.exports = {
           // 'css-loader',
           'sass-loader',
         ],
+        exclude: GLOBAL_CSS_REGEXP
       },
+      {
+        test: GLOBAL_CSS_REGEXP,
+        use: ['css-loader', 'sass-loader']
+      }
     ],
   },
 
