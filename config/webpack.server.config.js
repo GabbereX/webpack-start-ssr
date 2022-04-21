@@ -10,6 +10,9 @@ module.exports = {
 
   resolve: {
     extensions: ['.jsx', '.js', '.ts', '.tsx', '.json'],
+    // alias: {
+    //   '@images': path.resolve(__dirname, './src/assets/images'),
+    // },
   },
 
   mode: NODE_ENV ? NODE_ENV : 'development',
@@ -19,6 +22,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist/server'),
     filename: 'server.js',
+    publicPath: '/static/',
   },
 
   externals: [nodeExternals()],
@@ -44,7 +48,6 @@ module.exports = {
               },
             },
           },
-          // 'css-loader',
           'sass-loader',
         ],
         exclude: GLOBAL_CSS_REGEXP
@@ -52,7 +55,11 @@ module.exports = {
       {
         test: GLOBAL_CSS_REGEXP,
         use: ['css-loader', 'sass-loader']
-      }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|woff2?)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 

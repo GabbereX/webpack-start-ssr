@@ -17,6 +17,7 @@ module.exports = {
     extensions: ['.jsx', '.js', '.ts', '.tsx', '.json'],
     alias: {
       'react-dom': IS_DEV ? '@hot-loader/react-dom' : 'react-dom',
+      // '@images': path.resolve(__dirname, './src/assets/images'),
     },
   },
 
@@ -54,7 +55,6 @@ module.exports = {
               },
             },
           },
-          // 'css-loader',
           'sass-loader',
         ],
         exclude: GLOBAL_CSS_REGEXP
@@ -62,7 +62,11 @@ module.exports = {
       {
         test: GLOBAL_CSS_REGEXP,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      }
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|woff2?)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
 

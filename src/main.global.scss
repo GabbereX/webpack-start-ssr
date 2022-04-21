@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  $black: #333;
+  $orange: #cc6633;
+  $green: #a4cc33;
+  --black: #333;
+  --orange: #cc6633;
+  --green: #a4cc33;
+  --whiteLightness: 100%;
+  --white: hsl(0, 0%, var(--whiteLightness));
+  --grayF4: hsl(0, 0%, calc(var(--whiteLightness) - 4%));
+  --greyF3: hsl(0, 0%, calc(var(--whiteLightness) - 5%));
+  --grayD9: hsl(0, 0%, calc(var(--whiteLightness) - 15%));
+  --grayC4: hsl(0, 0%, calc(var(--whiteLightness) - 23%));
+  --gray99: hsl(0, 0%, calc(var(--whiteLightness) - 40%));
+  --gray66: hsl(0, 0%, calc(var(--whiteLightness) - 60%));
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', serif;
+  font-size: 14px;
+  line-height: 16px;
+  background-color: var(--grayF4);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+

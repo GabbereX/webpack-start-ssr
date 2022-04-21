@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
 
-import style from './App.scss';
+import './main.global.scss';
 
 function AppComponent() {
   return (
