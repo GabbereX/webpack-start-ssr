@@ -10,7 +10,10 @@ import { CardList } from './shared/CardsList';
 function AppComponent() {
   return (
     <Layout>
-      <div>Hello World</div>
+      
+      <Content>
+      	<div>Hello World</div>
+      </Content>
     </Layout>
   );
 }
